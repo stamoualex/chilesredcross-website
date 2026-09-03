@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiles Red Cross — How to Join</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <svg class="brand-mark" width="34" height="34" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="34" height="34" rx="7" fill="#ffffff" stroke="#e5e0d8" stroke-width="1"/>
+        <rect x="14.5" y="7" width="5" height="20" fill="#c8102e"/>
+        <rect x="7" y="14.5" width="20" height="5" fill="#c8102e"/>
+      </svg>
+      <span class="nav-brand-text">Chiles Red Cross</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">About us</a></li>
+      <li><a href="officers.html">Officers</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="join.html" aria-current="page">How to join</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" style="border-bottom: 1px solid var(--line); padding-bottom: 2.5rem;">
+    <div class="container" style="display:block;">
+      <p class="hero-eyebrow">Get involved</p>
+      <h1 style="font-size: clamp(2rem, 4vw, 2.8rem);">How to join</h1>
+      <p style="max-width: 60ch;">Joining the club is simple and only takes a few steps. They are:</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <ol class="steps-list">
+        <li>
+          <strong>Apply and create a Volunteer Connection account</strong>
+          <p>Volunteer Connection is the official system the Red Cross uses to manage volunteers and log service hours. <a href="https://www.redcross.org/volunteer/become-a-volunteer.html" target="_blank" rel="noopener" style="color: var(--red-dark); text-decoration: underline;">Start your application</a>: it only takes a few minutes.</p>
+        </li>
+        <li>
+          <strong>Have a parent or guardian give consent</strong>
+          <p> After you apply, the Red Cross emails your parent or guardian a consent form. They'll need to fill in their contact information and accept the terms before your registration is complete.</p>
+        </li>
+        <li>
+          <strong>Watch for your activation email</strong>
+          <p>Once your application and consent are processed, you'll get an email with a link to activate your account and see any remaining steps.</p>
+        </li>
+        <li>
+          <strong>Attend a meeting</strong>
+          <p>Come to Room 7206 on the first Monday of the month, 11:15 AM, and learn about upcoming events. 
+        </li>
+        <li>
+          <strong>Join the club communication networks</strong>
+          <p>Follow us on Instagram and join Remind to receive regular updates on events and meeting updates. </p>
+      </ol>
+
+      <div class="connect-grid">
+        <div class="connect-card">
+          <div class="connect-card-head">
+            <svg class="connect-icon" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.7" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.2" cy="6.8" r="1"/>
+            </svg>
+            <h4>Instagram</h4>
+          </div>
+          <p>Scan the code or follow us for photos, reminders, and event announcements.</p>
+          <div class="qr-frame">
+            <img src="instagram.jpg" alt="QR code to follow Chiles Red Cross on Instagram"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="qr-placeholder-text" style="display:none;">
+              Add <code>images/instagram-qr.png</code> to the site folder to show your QR code here.
+            </div>
+          </div>
+          <a href="https://instagram.com/chileshsredcross" target="_blank" rel="noopener" class="connect-handle">@chileshsredcross</a>
+        </div>
+
+        <div class="connect-card">
+          <div class="connect-card-head">
+            <svg class="connect-icon" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.7" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4h16v12H8l-4 4V4Z"/>
+            </svg>
+            <h4>Remind</h4>
+          </div>
+          <p>Get text or app reminders on meetings, upcoming events, and general reminders</p>
+          <div class="remind-stack">
+            <div class="remind-column">
+              <p class="remind-label">Join with:</p>
+              <div class="remind-code">@lcrc26</div>
+            </div>
+            <div class="remind-divider" aria-label="Or divider">
+              <span class="remind-divider-line"></span>
+              <span class="remind-divider-text">OR</span>
+              <span class="remind-divider-line"></span>
+            </div>
+            <div class="remind-column">
+              <p class="remind-label">Text the code to:</p>
+              <div class="remind-code">81010</div>
+            </div>
+          </div>
+          <a href="https://www.remind.com/join" target="_blank" rel="noopener" class="connect-handle">Join on Remind</a>
+        </div>
+      </div>
+
+
+      <div class="stamp-note" style="margin-top: 1rem;">
+        <span class="stamp-icon" aria-hidden="true">?</span>
+        <div>
+          <h4>Questions before you join?</h4>
+          <p>Email the president at <a href="mailto:mickeychita13@gmail.com" style="color: var(--stamp); text-decoration: underline;">mickeychita13@gmail.com</a>: new members are always welcome!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Past events</h2>
+        <p class="section-lede">A look back at what the club has done:</p>
+      </div>
+
+
+
+  <footer>
+    <div class="container footer-inner">. 
+      <div class="footer-brand">
+        <svg width="22" height="22" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="34" height="34" rx="7" fill="#c8102e"/>
+          <rect x="14.5" y="7" width="5" height="20" fill="#ffffff"/>
+          <rect x="7" y="14.5" width="20" height="5" fill="#ffffff"/>
+        </svg>
+        Chiles Red Cross
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html">About us</a></li>
+        <li><a href="officers.html">Officers</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="join.html">How to join</a></li>
+      </ul>
+      <p class="footer-copy">&copy; Chiles Red Cross Club. Serving our school and our community.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

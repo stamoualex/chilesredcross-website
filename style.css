@@ -1,0 +1,846 @@
+/* ==========================================================================
+   Chiles Red Cross — shared stylesheet
+   ========================================================================== */
+
+:root {
+  --red: #c8102e;
+  --red-dark: #8c0000;
+  --ink: #1b1b1b;
+  --ink-soft: #55534f;
+  --paper: #ffffff;
+  --panel: #f5f3ee;
+  --line: #e1ddd3;
+  --tan: #eee3ce;
+  --stamp: #2f5233;
+  --radius-s: 4px;
+  --radius-m: 10px;
+  --max: 1080px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink-soft);
+  background-color: var(--paper);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--ink);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+}
+
+img, svg {
+  display: block;
+}
+
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.navbar {
+  background-color: var(--paper);
+  border-bottom: 2px solid var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1.5rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand-mark {
+  flex-shrink: 0;
+}
+
+.nav-brand-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+.or {
+  color: black;
+  display: flex;
+  padding: 0.35rem 0.1rem;
+  font-size: 0.95rem;
+}
+
+.remind-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.remind-label {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.remind-code {
+  width: 100%;
+  align-self: center;
+  background: var(--panel);
+  color: var(--red-dark);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-s);
+  min-height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remind-code:first-of-type {
+  grid-column: 1;
+}
+
+.remind-code:last-of-type {
+  grid-column: 1;
+}
+
+.remind-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.remind-divider-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(200, 16, 46, 0.28);
+}
+
+.remind-divider-text {
+  color: var(--red-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.remind-instruction {
+  margin: 0;
+  text-align: center;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 17px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle .bar {
+  height: 2px;
+  width: 100%;
+  background-color: var(--ink);
+  border-radius: 1px;
+}
+
+/* ==========================================================================
+   Hero + field-tag panel (signature device, reused for notices)
+   ========================================================================== */
+
+.hero {
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  color: var(--red);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4.4vw, 3.2rem);
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.08rem;
+  max-width: 46ch;
+  margin-bottom: 1.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-s);
+  border: 2px solid var(--ink);
+  transition: transform 0.12s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--red);
+  border-color: var(--red);
+  color: var(--paper);
+}
+
+.btn-primary:hover {
+  background-color: var(--red-dark);
+  border-color: var(--red-dark);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--ink);
+}
+
+.btn-secondary:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* the "field tag" — a manifest-style notice card used for key facts */
+.field-tag {
+  position: relative;
+  background-color: var(--panel);
+  border: 1.5px dashed var(--red-dark);
+  border-radius: var(--radius-m);
+  padding: 1.75rem 1.5rem 1.5rem;
+}
+
+.field-tag::before {
+  display: none;
+}
+
+.field-tag-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--red-dark);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(140, 0, 0, 0.25);
+}
+
+.field-tag dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.field-tag dt {
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.field-tag dd {
+  color: var(--ink-soft);
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+section {
+  padding: 3.5rem 0;
+}
+
+section.alt {
+  background-color: var(--panel);
+}
+
+.section-head {
+  max-width: 60ch;
+  margin-bottom: 2.25rem;
+}
+
+.section-title {
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.section-lede {
+  color: var(--ink-soft);
+}
+
+.about-copy {
+  max-width: 62ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* Quick-link cards on the about page */
+.quicklinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.quicklink {
+  display: block;
+  text-decoration: none;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 1.5rem;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.quicklink:hover {
+  border-color: var(--red);
+  transform: translateY(-2px);
+}
+
+.quicklink-label {
+  color: var(--red);
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.quicklink h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.quicklink p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.video-section {
+  padding: 1.5rem 0 3rem;
+}
+
+.video-box {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 0.9rem;
+  box-shadow: 0 10px 30px rgba(27, 27, 27, 0.04);
+}
+
+.video-box iframe,
+.video-box video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: var(--panel);
+}
+
+/* ==========================================================================
+   Officer badges
+   ========================================================================== */
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.75rem 1.5rem;
+}
+
+.badge {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--panel);
+  border: 2px solid var(--line);
+  z-index: 2;
+}
+
+.badge-role {
+  background-color: var(--red);
+  color: var(--paper);
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 1.1rem 1rem 0.7rem;
+}
+
+.badge-body {
+  padding: 1.25rem 1.25rem 1.5rem;
+  text-align: center;
+  border-top: 1px dashed var(--line);
+}
+
+.badge-body h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.badge-body a {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.badge-body a:hover {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Project cards
+   ========================================================================== */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 1.75rem;
+}
+
+.project-card-centered {
+  text-align: center;
+}
+
+.project-card-centered .project-icon {
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.project-card-centered .project-tag {
+  display: inline-block;
+}
+
+.project-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--red-dark);
+  background: var(--panel);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+}
+
+.empty-state {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-m);
+  padding: 1.5rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Join steps
+   ========================================================================== */
+
+.steps-list {
+  list-style: none;
+  counter-reset: step-counter;
+  width: 100%;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.steps-list li {
+  counter-increment: step-counter;
+  background: var(--paper);
+  padding: 1.1rem 1.5rem 1.1rem 3.75rem;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--line);
+  position: relative;
+}
+
+.steps-list li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 1.1rem;
+  top: 1.15rem;
+  background: var(--red);
+  color: var(--paper);
+  font-weight: 700;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.steps-list strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+  font-size: 1.02rem;
+}
+
+.steps-list p {
+  font-size: 0.94rem;
+}
+
+.stamp-note {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  width: 100%;
+  max-width: none;
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--panel);
+}
+
+.stamp-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--stamp);
+  color: var(--stamp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+}
+
+.stamp-note h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.stamp-note p {
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   Connect cards (Instagram / Remind)
+   ========================================================================== */
+
+.connect-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: none;
+  margin-top: 1.75rem;
+}
+
+.connect-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.connect-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.connect-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.connect-card h4 {
+  font-size: 1.05rem;
+}
+
+.connect-card p {
+  font-size: 0.92rem;
+}
+
+.qr-frame {
+  width: 260px;
+  height: 300px;
+  align-self: center;
+  border: 1.5px dashed var(--line);
+  border-radius: var(--radius-s);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.qr-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.qr-placeholder-text {
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  text-align: center;
+  padding: 0.5rem;
+  line-height: 1.4;
+}
+
+.connect-handle {
+  text-align: center;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.connect-handle:hover {
+  color: var(--red);
+}
+
+.remind-code {
+  align-self: center;
+  background: var(--panel);
+  color: var(--red-dark);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 1.3rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-s);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 2.5rem 0;
+  margin-top: 1rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+
+.footer-links a:hover {
+  color: var(--red);
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  width: 100%;
+  padding-top: 1.25rem;
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 860px) {
+  .hero .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--paper);
+    padding: 1rem 1.5rem 1.5rem;
+    border-bottom: 2px solid var(--ink);
+    gap: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .quicklinks {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
